@@ -1,6 +1,5 @@
 
 const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -11,18 +10,12 @@ module.exports = {
   //entry: path.resolve(__dirname, 'src/index.jsx'),
   output: {
     publicPath: '/',
-    filename: 'bundle-[hash:8].js',
+    filename: 'bundle-[fullhash:8].js',
     path: path.resolve(__dirname, 'dist'),
-    //chunkFilename: 'chunk[id]-[chunkHash:8].js',
+    //chunkFilename: 'chunk[id]-[chunkhash:8].js',
   },
   plugins: [
     new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin({
-      // Write Logs to Console
-      verbose: true,
-      // Automatically remove all unused webpack assets on rebuild
-      cleanStaleWebpackAssets: false,
-    }),
   ],
   optimization: {
     splitChunks: {
