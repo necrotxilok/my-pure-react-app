@@ -11,6 +11,9 @@ module.exports = merge(common, {
   output: {
     filename: '[name].js',
   },
+  watchOptions: {
+    ignored: '**/node_modules',
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
