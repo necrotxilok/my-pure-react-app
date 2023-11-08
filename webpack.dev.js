@@ -1,13 +1,13 @@
-/** @format */
 
-const { merge } = require('webpack-merge'),
-  common = require('./webpack.config'),
-  path = require('path'),
-  package = require('./package')
+const { merge } = require('webpack-merge')
+const common = require('./webpack.config')
+const path = require('path')
+const package = require('./package')
 
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
+  //devtool: 'source-map',
   output: {
     filename: '[name].js',
   },

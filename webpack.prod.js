@@ -1,13 +1,10 @@
-/** @format */
 
 const { merge } = require('webpack-merge')
-const common = require('./webpack.config.js')
+const common = require('./webpack.config')
 
 module.exports = merge(common, {
   mode: 'production',
-  // if you want to debug your code on production enviornment, add 'source-map' into output file.
-  // devtool: 'source-map',
   output: {
-    filename: '[name]-[fullhash:8].js',
+    filename: '[name].bundle.js',
   },
 })
