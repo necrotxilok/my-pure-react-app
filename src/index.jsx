@@ -1,15 +1,14 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 
-import './index.css'
-//import App from './App'
+import App from './app'
 
-console.log('Hello World!')
+console.log('Starting My Pure React App...')
 
 const container = document.getElementById('root')
 const root = createRoot(container)
 root.render(
   <React.StrictMode>
-    <h1>Hello World!</h1>
+    <App/>
   </React.StrictMode>
 )
