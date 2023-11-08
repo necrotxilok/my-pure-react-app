@@ -9,7 +9,7 @@ module.exports = merge(common, {
   devtool: 'eval-cheap-module-source-map',
   //devtool: 'source-map',
   output: {
-    filename: '[name].js',
+    publicPath: '/app/',
   },
   watchOptions: {
     ignored: '**/node_modules',

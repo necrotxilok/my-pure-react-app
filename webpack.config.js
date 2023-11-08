@@ -11,9 +11,8 @@ module.exports = {
     vendor: ['react', 'react-dom'],
   },
   output: {
-    publicPath: '/',
-    path: path.resolve(__dirname, 'dist'),
-    chunkFilename: 'chunk[id]-[chunkhash:8].js',
+    path: path.resolve(__dirname, 'dist/app'),
+    filename: '[name].js',
   },
   plugins: [
     new MiniCssExtractPlugin(),
