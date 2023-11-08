@@ -8,7 +8,7 @@ module.exports = {
       import: './src/index.jsx',
       dependOn: 'vendor',
     },
-    vendor: ['react', 'react-dom', 'react-router-dom'],
+    vendor: ['react', 'react-dom'],
   },
   output: {
     publicPath: '/',
@@ -21,7 +21,7 @@ module.exports = {
   resolve: {
     alias: {
       '@utils': path.resolve(__dirname, 'src/utils'),
-      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@themes': path.resolve(__dirname, 'src/themes'),
       '@stores': path.resolve(__dirname, 'src/stores'),
       '@actions': path.resolve(__dirname, 'src/actions'),
       '@components': path.resolve(__dirname, 'src/components'),
