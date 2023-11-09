@@ -4,18 +4,40 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
+    // Vendor
+    vendor: ['lodash', 'react', 'react-dom'],
+    // Themes
+    default: {
+      import: './src/themes/default',
+      dependOn: 'vendor',
+      filename: 'themes/[name].js',
+    },
+    colorize: {
+      import: './src/themes/colorize',
+      dependOn: 'vendor',
+      filename: 'themes/[name].js',
+    },
+    // Application
     app: {
       import: './src/index.jsx',
       dependOn: 'vendor',
     },
-    vendor: ['react', 'react-dom'],
   },
   output: {
     path: path.resolve(__dirname, 'dist/app'),
     filename: '[name].js',
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: (pathData) => {
+        if (pathData?.chunk?.filenameTemplate) {
+          let template = pathData.chunk.filenameTemplate
+          template = template.replace('.js', '.css')
+          return template
+        }
+        return '[name].css'
+      }
+    }),
   ],
   resolve: {
     alias: {
