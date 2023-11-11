@@ -2,6 +2,14 @@
 
 Simple Webpack project to learn how to create a pure React App from scratch.
 
+## Setup
+
+Install dependencies
+
+```
+npm i
+```
+
 ## Scripts
 
 Init local Web Server with Hot Reload.
